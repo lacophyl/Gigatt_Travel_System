@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+}
+.wrapper{
+	display: flex;
+	flex-direction: column;
+}
+.wrapper .sidebar{
+	background: #333;
+	width: 300px;
+	height: 100%;
+	position: fixed;
+	padding: 30px 0;
+
+}
+.wrapper .sidebar h2{
+	color: #fff;
+	margin-bottom: 30px;
+	text-transform: uppercase;
+	font-size: 1.35rem;
+	text-align: center;
+}
+.wrapper .sidebar ul li {
+	padding: 18px;
+}
+.wrapper .sidebar ul li a{
+	color: #fff;
+	font-size: 1rem;
+}
+.wrapper .sidebar ul li a:hover{
+	color: #F0BB78;
+}
+.wrapper .sidebar ul li:hover{
+	background: #111;
+}
+.header{
+	margin-left: 300px;
+	width: 100%;
+	z-index: 1000;
+}
+.header .admin_header {
+    background: #333;
+    padding: 15px;
+    width: calc(100vw - 300px);
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 50px;
+    position: fixed;
+    top: 0;
+    left: 300px;
+    z-index: 1000;
+}
+.header .admin_header button{
+	padding: 10px 20px 10px 20px ;
+	text-decoration: none;
+	font-size: 1.3rem;
+	border-radius: 10px;
+	visibility: hidden;
+}
+.header .admin_header a{
+	padding: 10px 20px 10px 20px ;
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.3rem;
+}
+.header .admin_header a:hover{
+	background: #111;
+	color: #F0BB78;
+	border-radius: 30px;
+}
+.main-content {
+    position: relative; /* Change to relative to allow child elements to position correctly */
+    top: 95px; /* Below the header */
+    left: 300px; /* Right of the sidebar */
+    width: calc(100% - 300px); /* Full width minus sidebar */
+    height: calc(100vh - 95px - 55px); /* Full height minus header and footer */
+    background: white; /* Background color for visibility */
+    overflow-y: auto; /* Enables vertical scrolling if content exceeds height */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    padding: 20px; /* Padding for inner content */
+    box-sizing: border-box; /* Ensures padding is included in width/height calculations */
+    display: flex; /* Allows for flexible layout */
+    flex-direction: column; /* Stacks child elements vertically */
+}
+
+/*Brand Style*/
+.main {
+        width: 100%;
+        height: calc(100vh - 95px); /* Adjust height to account for the top margin */
+        display: flex;
+        flex-direction: column;
+}
+
+.main table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-bottom: 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    counter-reset: row; /* Initialize the counter */
+}
+
+.main table th, td {
+    padding: 15px; 
+    text-align: left; 
+    border: 1px solid #ccc; 
+}
+
+.main table th {
+    background-color: #222;
+    color: #fff; 
+}
+.main table tr:not(:first-child){
+     counter-increment: row;
+}
+.main table tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+.main table tr td:first-child::before {
+    content: counter(row) ". "; /* Display the counter */
+}
+/* Fixed width for ID and Action columns */
+.main table th:nth-child(1), td:nth-child(1) {
+    width: 20px; /* Fixed width for ID column */
+    text-align: center;
+}
+
+.main table th:nth-child(3), td:nth-child(3) {
+    width: 120px; /* Fixed width for Action column */
+    text-align: center;
+}
+.act-btn-box{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	position: relative;
+	left: 0;
+}
+.input-submit-brand { 
+	width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+
+#add-brand-button {
+    width: 350px;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: .3s;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+#add-brand-button:hover {
+    background: #000;
+    transform: scale(1.05, 1);
+}
+.action-btn {
+    background: #222;
+    border: none;
+    border-radius: 5px; 
+    color: #fff; 
+    cursor: pointer; 
+    padding: 5px;
+    margin-right: 5px; 
+    transition: background 0.3s; 
+    text-align: center;	
+	font-size: 1.25rem;
+}
+
+.action-btn:hover {
+    background: #000; 
+    transform: scale(1.05, 1);
+}
+
+/*Add Brand*/
+.update-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px; 
+    height: auto; 
+    margin: auto;
+    padding: 20px;
+}
+.update-box form {
+    margin-top: -110px;
+}
+.upload-section {
+    border-color: #333;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px; 
+}
+.update-header {
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+.update-header h2 {
+    color: #333;
+    font-size: 1.90rem;
+    font-weight: 600;
+}
+.input-box {
+    margin-bottom: 15px; 
+}
+.input-box .input-field {
+    width: 100%;
+    height: 60px;
+    font-size: 1.1rem;
+    padding: 0 25px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.05);
+    outline: transparent;
+    transition: .3s;
+}
+.input-box .image-input {
+    width: 100%;
+    height: 60px;
+    font-size: 1.1rem;
+    border: none;
+    outline: transparent;
+    transition: .3s;
+    padding-top: 15px;
+}
+::placeholder {
+    font-weight: 500;
+    color: #434;
+    opacity: 70%;
+}
+.input-field:focus {
+    width: 105%;
+}
+.input-submit {
+    display: flex;
+    justify-content: center; 
+}
+.add-btn {
+    width: 100%;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: .3s;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.add-btn:hover {
+    background: #000;
+    transform: scale(1.05, 1);
+}
+.action-btn {
+    background: #222;
+    border: none;
+    border-radius: 5px; 
+    color: #fff; 
+    cursor: pointer; 
+    left: 0;
+    padding: 5px;
+    transition: background 0.3s; 
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.action-btn:hover {
+    background: #000; 
+    transform: scale(1.05, 1);
+}
+
+@media (max-width: 600px) {
+    .update-box {
+        padding: 10px; 
+    }
+    .upload-section {
+        padding: 10px; 
+    }
+    .update-header h2 {
+        font-size: 1.5rem; 
+    }
+    .input-box .input-field,
+    .input-box .image-input {
+        height: 50px;
+        font-size: 1rem; 
+    }
+    .add-btn {
+        height: 50px; 
+        font-size: 1rem; 
+    }
+    .action-btn {
+        padding: 15px; 
+    }
+}
+
+/*Update Acoount*/
+.update-box{
+	position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 600px;
+    height: auto; 
+    margin: auto;
+    padding: 20px; 
+    margin-top: 95px;
+}
+.update-form{
+	position: relative;
+	top: 95px;
+    border-color: #333;
+    padding: 30px;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+.update-header{
+    text-align: center;
+    margin: 20px 0 auto 0;
+}
+.update-header header{
+    color: #333;
+    font-size: 1.90rem;
+    font-weight: 600;
+}
+.input-box .input-field{
+    width: 100%;
+	height: 60px;
+	font-size: 1.1rem;
+	padding: 0 25px;
+	margin-bottom: 15px;
+	border-radius: 30px;
+	border: none;
+	box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.05);
+	outline: transparent;
+	transition: .3s;
+}
+::placeholder{
+    font-weight: 500;
+    color: #434;
+    opacity: 70%;
+}
+.input-field:focus{
+    width: 105%;
+}
+.submit-btn{
+    width: 100%;
+    height: 60px;
+    background: #222;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: .3s;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.submit-btn:hover{
+    background: #000;
+    transform: scale(1.05,1);
+}
+@media (max-width: 600px) {
+    .update-box {
+        padding: 10px; 
+    }
+    .upload-form {
+        padding: 10px; 
+    }
+    .update-header h2 {
+        font-size: 1.5rem; 
+    }
+    .input-box .input-field,
+    .input-box .image-input {
+        height: 50px;
+        font-size: 1rem; 
+    }
+    .add-btn {
+        height: 50px; 
+        font-size: 1rem; 
+    }
+    .action-btn {
+        padding: 15px; 
+    }
+}
+
+/*Footer*/
+.footer {
+	width: calc(100vw - 300px);
+    margin-left: 300px; 
+    background: #111;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    flex-shrink: 0;
+}
+@media(max-width:800px){
+	.header .admin_header{
+		width: 100%;
+		left: 0;
+	}
+	.header .admin_header button{
+		visibility: visible;
+	}
+	.header .admin_header button:hover{
+		cursor: pointer;
+	}
+	.content{
+		width: 100%;
+		left: 0;
+	}
+	.main-content{
+    	width: 100%;
+    	left: 0;
+	}
+	.footer{
+		width: 100%;
+		margin-left: 0;
+	}
+	.sidebar{
+		display: none;
+		margin-top: 95px;
+	}
+	.show{
+		display: block;
+	}
+}
