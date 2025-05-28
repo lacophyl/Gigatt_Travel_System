@@ -6,6 +6,7 @@ Welcome to Gigatt Travel Online Booking System.
 Charles Phyllipe L. Acosta
 Yumi Y. Vargas
 Damiel Villanueva
+Jan Jervy Abude
 
 ********************
 
